@@ -59,7 +59,7 @@ def diffusion(prompt):
                  negative_prompt=uncond_prompts,
                  generator=torch.Generator().manual_seed(seed) if seed is not None else None,)
     
-    
+    image.save(f"images/{prompt}.png")
     return image.images[0]
 
 def simple_inpaint(image, bounds, word):
